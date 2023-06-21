@@ -1,6 +1,7 @@
 import React from 'react'
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import './Cart.scss';
+import { Helmet } from 'react-helmet';
 const Cart = () => {
 
 const data = [
@@ -19,6 +20,11 @@ const data = [
 
   return (
     <div className='cart'>
+      <Helmet>
+          <title>Cart</title>
+          <meta name='description' content='Your Shopping Cart'/>
+          <meta name='keywords' content='Clothes, Shopping, Fashion, Style, Cart, Checkout, Payment' />
+        </Helmet>
       <h1>Products in your cart</h1>
       {data?.map(item=>(
         <div className='item' key={item.id}>

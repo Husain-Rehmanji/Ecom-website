@@ -1,20 +1,24 @@
 import React, { useState } from 'react'
 import "./Product.scss";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import BalanceIcon from "@mui/icons-material/Balance";
+import { Helmet } from 'react-helmet';
 
 const Product = () => {
 
   const [selectedImg, setSelectedImg] = useState(0)
   const [quantity, setQuantity] = useState(1)
   const images = [
-    "https://images.pexels.com/photos/10026491/pexels-photo-10026491.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?auto=compress&cs=tinysrgb&w=1600",
   ];
 
   return (
     <div className='product'>
+      <Helmet>
+          <title>Product Description</title>
+          <meta name='description' content='Product Description'/>
+          <meta name='keywords' content='Clothes, Shopping, Fashion, Style, Product, Description, shirt, T-shirt, top, skirt, jeans, shoes, bags' />
+        </Helmet>
       <div className="left">
         <div className="images">
           <img src={images[0]} alt="" onClick={(e) => setSelectedImg(0)}/>
